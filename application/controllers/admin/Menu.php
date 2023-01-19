@@ -5,8 +5,9 @@ class Menu extends CI_Controller {
   public function index()
   {
     $data = array(
-      'content' => 'dashboard/index.php'
+      'title' => 'dashboard',
+      'content' => 'admin/dashboard/index'
     );
-    $this->load->view('template/menu', $data);
+    $this->load->view('admin/template/main', $data);
   }
 }
