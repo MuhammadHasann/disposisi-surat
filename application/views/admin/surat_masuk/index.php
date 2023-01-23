@@ -39,7 +39,9 @@
                     <td>$suratdata->keterangan</td>
                     <td>$suratdata->tgl_surat</td>
                     <td>
-                      <img src=".base_url('assets/photo/surat_masuk/'.$suratdata->image)." width ='64'/>
+                      <a href=".base_url('assets/photo/surat_masuk/'.$suratdata->image)." class='perbesar'>
+                        <img src=".base_url('assets/photo/surat_masuk/'.$suratdata->image)." width ='64'  style='cursor: pointer;'/>
+                      </a>
                     </td>
                     <td>
                       <div>

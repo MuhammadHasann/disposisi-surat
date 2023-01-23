@@ -24,6 +24,7 @@ class User extends CI_Controller {
   {
     $data = array(
       'title' => 'Tambah Data User',
+      'user' => $this->User_model->getAll(),
       'content'=> 'admin/user/add_form'
     );
 
@@ -43,9 +44,11 @@ class User extends CI_Controller {
 
   public function getedit($id)
   {
+    $user_id = $this->session->userdata('id');
     $data = array(
       'title' => 'Update Data user',
-      'user' => $this->User_model->getById($id),
+      'users' => $this->User_model->getById($id),
+      'user' => $this->db->where('is_active',1)->where('id', $user_id)->get('tb_user')->result(),
       'content'=> 'admin/user/edit_form'
     );
 
